@@ -1,0 +1,2 @@
+# lp-inventory-base
+ 
