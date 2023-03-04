@@ -971,17 +971,21 @@ public class DailyProduction{
                 lsSQL = MiscUtil.addCondition(getStocksWExpiraiton(), "a.cRecdStat = " + SQLUtil.toSQL(RecordStatus.ACTIVE));
                 System.out.println(lsSQL);
                 if (fbByCode){
-                    if (paInvOthers.get(fnRow).getValue("sStockIDx").equals(fsValue)) return true;
-                    
-                    lsSQL = MiscUtil.addCondition(lsSQL, "a.sBarCodex = " + SQLUtil.toSQL(fsValue));
+                    if(!fsValue.isEmpty()){
+                        if (paInvOthers.get(fnRow).getValue("sStockIDx").equals(fsValue)) return true;
+                    }
+                    lsSQL = MiscUtil.addCondition(lsSQL, "a.sBarCodex LIKE " + SQLUtil.toSQL(fsValue + "%"));
                     
                     loRS = poGRider.executeQuery(lsSQL);
                     
                     loJSON = showFXDialog.jsonBrowse(poGRider, loRS, lsHeader, lsColName);
                 } else{
                     if (!fbSearch){
-                        if (paInvOthers.get(fnRow).getValue("sBarCodex").equals(fsValue)) return true;
                         
+                        if(!fsValue.isEmpty()){
+                            if (paInvOthers.get(fnRow).getValue("sBarCodex").equals(fsValue)) return true;
+                        }
+                        lsSQL = MiscUtil.addCondition(lsSQL, "a.sBarCodex LIKE " + SQLUtil.toSQL(fsValue+"%"));
                         loJSON = showFXDialog.jsonSearch(poGRider, 
                                                             lsSQL, 
                                                             fsValue, 
