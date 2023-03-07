@@ -4,7 +4,9 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group name="LP IntegSys"/>
         <group>
-            <file>file:/C:/Users/User/OneDrive/Documents/GitHub/LPedritos/lp-inventory-base/src/org/rmj/cas/inventory/base/Inventory.java</file>
+            <file>file:/C:/Users/User/OneDrive/Documents/GitHub/LPedritos/lp-inventory-base/src/org/rmj/cas/inventory/base/InvExpiration.java</file>
+            <file>file:/C:/Users/User/OneDrive/Documents/GitHub/LPedritos/lp-inventory-base/src/org/rmj/cas/inventory/base/InvTransfer.java</file>
+            <file>file:/C:/Users/User/OneDrive/Documents/GitHub/LPedritos/lp-inventory-base/src/org/rmj/cas/inventory/base/InventoryTrans.java</file>
         </group>
     </open-files>
 </project-private>
